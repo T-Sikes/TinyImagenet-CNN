@@ -37,16 +37,17 @@ This model achieves **79% test accuracy** without self-attention or hyperparamet
 ## Dataset
 
 - **Tiny ImageNet** ([website](https://tiny-imagenet.herokuapp.com/))  
-- 200 classes, 500 training images per class  
+- 15 classes, 500 training images per class  
 - 64x64 RGB images  
 
-> **Note:** The dataset is not included in this repository. Download it separately and place it in the designated `data/` folder.
+> **Note:** The dataset is not included in this repository. Download it separately and place it in the designated `data/` folder. the included data is not the full 200 classes, and only includes 15.
 
 ---
 
 ## Model
 
-- Standard CNN architecture with multiple convolutional layers, ReLU activations, and max pooling  
+- Standard CNN architecture with multiple convolutional layers, ReLU activations, and max pooling
+- Stepped dropout with identity pooling in coupled convolutional layers
 - Fully connected layers at the end for classification  
 - No self-attention or advanced hyperparameter optimization  
 
