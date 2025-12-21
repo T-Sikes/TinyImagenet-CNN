@@ -16,11 +16,6 @@ This model achieves **79% test accuracy** without self-attention or hyperparamet
 - [Dataset](#dataset)  
 - [Model](#model)  
 - [Requirements](#requirements)  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Results](#results)  
-- [Contributing](#contributing)  
-- [License](#license)  
 
 ---
 
