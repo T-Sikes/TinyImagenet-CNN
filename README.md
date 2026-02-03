@@ -13,6 +13,7 @@ All code is implemented in **Jupyter Notebook** for easy experimentation and mod
 
 ## Table of Contents
 
+- [Evaluation](#evaluation)
 - [Features](#features)  
 - [Dataset](#dataset)  
 - [Model](#model)  
@@ -20,6 +21,14 @@ All code is implemented in **Jupyter Notebook** for easy experimentation and mod
 - [Installation](#installation)  
 
 ---
+
+## Evaluation
+
+For simple evaluation of the trained model, a .py script is provided and can be run with 
+```
+python model_test.py
+```
+the model weights for the previously trained model will be downloaded from google drive. 
 
 ## Features
 
