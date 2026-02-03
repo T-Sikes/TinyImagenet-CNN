@@ -79,7 +79,7 @@ If a specific GPU version is not found, you can install a CPU-only version:
 ```
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 ```
-Though be advised this projet was made with GPU compatibility in mind, no testing or compability resolution has been done for CPU-only implementation.
+Though be advised this project was made with GPU compatibility in mind, no testing or compabatibility resolution has been done for CPU-only implementation.
 
 Due to this, it is HIGHLY RECCOMENDED to manually install the compatible version of torch for your hardware before installing dependencies.
 
