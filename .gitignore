@@ -1,3 +1,5 @@
 /venv/
 /lib/
 __pycache__/
+model.pth
+

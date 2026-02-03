@@ -4,7 +4,7 @@ model_test.py
 Standalone script to load trained model weights and run a full validation check.
 """
 
-import torch
+import torch, os, gdown
 from collections import Counter
 
 from tinyimagenet_cnn import theBestCNN, val_loader  
@@ -13,14 +13,32 @@ from tinyimagenet_cnn import theBestCNN, val_loader
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
+
+def download_model(path="model.pth"):
+    if os.path.exists(path):
+        print(f"✅ Model file already exists at {path}")
+        return
+
+    print("⬇️ Downloading model weights from Google Drive...")
+    
+    file_id = "19ExAOiFKCkubhvjn-XHpu3Lit3f3-FTA"
+    url = f"https://drive.google.com/uc?id={file_id}"
+
+    try:
+        gdown.download(url, path, quiet=False)
+        print(f"✅ Model downloaded and saved to {path}")
+    except Exception as e:
+        print(f"❌ Failed to download model: {e}")
+
 # === Model Loading Function ===
 def load_model(path="model.pth", num_classes=15):
+    download_model(path)
     """
     Load PyTorch model weights from a file.
     Returns the model on the specified device.
     """
     model = theBestCNN(num_classes=num_classes)
-    model.load_state_dict(torch.load(path, map_location=device))
+    model.load_state_dict(torch.load(path, map_location=device, weights_only=False))
     model = model.to(device)
     model.eval()
     print(f"✅ Model loaded from {path}")
